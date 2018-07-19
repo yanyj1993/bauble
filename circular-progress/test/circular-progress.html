@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="../../statics/js/vendors/jquery/jquery.slim.min.js"></script>-->
+</head>
+<body onload="init()">
+<div id="test" style="width: 100px; height: 100px; position:relative; left: 100px;"></div>
+<script src="../dist/circular-progress.js"></script>
+
+<script type="text/javascript">
+    function init() {
+        new circularProgress({
+            target: 'test',
+            animate: true,
+            style: {
+                background: {
+                    // backgroundImage: 'http://img.zcool.cn/community/01f09e577b85450000012e7e182cf0.jpg@1280w_1l_2o_100sh.jpg',
+                    alpha: 0.5,
+                    crossOrigin: true,
+                    backgroundColor: '#fff'
+                },
+                ring: {
+                    fill: '#ffffff',
+                    lineWidth:1
+                }
+            }
+        }).setValue(70);
+    }
+
+</script>
+</body>
+</html>

@@ -49,16 +49,14 @@ let createDir = (name) => {
     }
 
 
-
+    createGulpFile(name);
 };
 
 let createGulpFile = name => {
     // 生成gulp文件
-
-    let tem = fs.readFileSync('gulp.tem');
-    fs.writeFileSync(`${name}/gulp.config.js`, fs.readFileSync('gulp.tem'));
-    console.log(tem.toString())
+    fs.writeFileSync(`${name}/gulp.config.js`, fs.readFileSync('tem/gulp.tem'));
+    fs.writeFileSync(`${name}/src/${name}.js`, fs.readFileSync('tem/js.tem'));
+    fs.writeFileSync(`${name}/test/${name}.html`, fs.readFileSync('tem/test-html.tem'));
 };
 
-// create();
-createGulpFile('test1');
+create();
