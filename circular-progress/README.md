@@ -9,7 +9,8 @@ chrome：支持html5-canvas的基本支持
 其它浏览器： 未测试
 <hr />
 
-###api
+###api  
+
 1 new circularProgress(*option*)     
 说明：根据传递的参数生成实例      
 ```
