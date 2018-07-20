@@ -10,10 +10,11 @@
 <script src="../dist/circular-progress.js"></script>
 
 <script type="text/javascript">
+    var cp;
     function init() {
-        new circularProgress({
+        cp = new circularProgress({
             target: 'test',
-            animate: true,
+            animate: false,
             style: {
                 background: {
                     // backgroundImage: 'http://img.zcool.cn/community/01f09e577b85450000012e7e182cf0.jpg@1280w_1l_2o_100sh.jpg',
