@@ -48,7 +48,7 @@ chrome：支持html5-canvas的基本支持
 - height[Number]  
 说明：环形进度条的高度， 未指明时，会采用目标div的height, 建议与weight值一致
 - animate[Boolean]  
-说明：是否采用动画效果
+说明：是否采用动画效果，默认为true
 - formatText[Function]  
 说明：设置中间文本时需要对文本处理的参数，默认输出数字+%号的文本
 - style[Object]   
