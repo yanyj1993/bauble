@@ -3,13 +3,13 @@
 [点击返回](../README.md "点击返回")  
 
 
-###浏览器支持 
+### 浏览器支持 
 ie：ie8以上（ie8动画会有卡顿的情况出现）  
 chrome：支持html5-canvas的基本支持  
 其它浏览器： 未测试
 <hr />
 
-###api  
+### api  
 
 1 new circularProgress(*option*)     
 说明：根据传递的参数生成实例      
@@ -55,7 +55,7 @@ chrome：支持html5-canvas的基本支持
 - style[Object]   
 说明： 采用样式，未指明会采用默认样式
 ---
-###style参数
+### style参数
 ```
  {
         background: { // 背景的设置  
