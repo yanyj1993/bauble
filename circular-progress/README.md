@@ -22,7 +22,7 @@ chrome：支持html5-canvas的基本支持
     let cp = new circularProgress(***option***).setValue(10);
 ```  
 
-3 attach(*jquery*)
+3 attach(*jquery*)  
 说明：将该方法扩展到jquery实例上,在jquery实例为$, JQuery, jquery时不需要手动执行  
 ```
     circularProgress.attach($); // $为jquery对象
