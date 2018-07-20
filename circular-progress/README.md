@@ -1,6 +1,6 @@
 <h1>圆形进度条</h1>  
   
-[点击返回](https://github.com/yanyj1993/bauble "点击返回")  
+[点击返回](../README.md "点击返回")  
 
 
 ###浏览器支持 
@@ -12,29 +12,29 @@ chrome：支持html5-canvas的基本支持
 ###api
 1 new circularProgress(*option*)     
 说明：根据传递的参数生成实例      
-<code>
+```
     let cp = new circularProgress(***option***);
-</code>  
+```  
   
 2 setValue(*value*)  
 说明：根据传递的参数设置的进度，value为整数数值型  
-<code>
+```
     let cp = new circularProgress(***option***).setValue(10);
-</code>  
+```  
 
 3 attach(*jquery*)
 说明：将该方法扩展到jquery实例上,在jquery实例为$, JQuery, jquery时不需要手动执行  
-<code>
+```
     circularProgress.attach($); // $为jquery对象
     $('#test).circularProgress(*option*);
-</code>
+```
 
 4 deviate(*jquery*)  
 说明：将jquery上扩展的方法重新赋值之前的扩展方法，调用该方法后则无法使用jquery实例来生成circularProgress了  
-<code>
+```
     circularProgress.deviate($); // $为jquery对象
     $('#test).circularProgress(*option*); // throw new Error
-</code>
+```
 ***
 ### 参数
 #### 初始化参数
