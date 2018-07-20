@@ -12,7 +12,11 @@ const gulpSequence = require('gulp-sequence');
 gulp.task("toes5", function () {
   return gulp.src("src/**/*.js")// ES6 源码存放的路径
     .pipe(babel({
-        presets: ['env', 'stage-2']
+        presets: [['env', {
+            "targets": {
+                "browsers": [ "ie >= 8", "chrome >= 62" ]
+            }
+        }], 'stage-2']
     }))
     .pipe(gulp.dest("dist")); //转换成 ES5 存放的路径
 });

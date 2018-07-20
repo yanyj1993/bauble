@@ -4,32 +4,102 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!--<script src="../../statics/js/vendors/jquery/jquery.slim.min.js"></script>-->
+    <style type="text/css">
+
+        .col {
+            display: flex;
+            width: 100%;
+            height: 150px;
+        }
+
+        .flex {
+            flex-grow: 1;
+            flex-wrap: wrap;
+        }
+        .label {
+            padding: 40px 0 10px 0;
+        }
+
+    </style>
 </head>
 <body onload="init()">
-<div id="test" style="width: 100px; height: 100px; position:relative; left: 100px;"></div>
+
+
+<div class="col">
+    <div class='flex label'  style="width: 100px; height: 100px; ">
+       default:
+    </div>
+
+    <div class='flex' id="test0" style="width: 100px; height: 100px; "></div>
+
+    <div class='flex' id="test1" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test2" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test3" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test4" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test5" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test6" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test7" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test8" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test9" style="width: 100px; height: 100px; "></div>
+</div>
+
+<div class="col">
+    <div class='flex label'  style="width: 100px; height: 100px; ">
+        blue-light:
+    </div>
+
+    <div class='flex' id="test10" style="width: 100px; height: 100px; "></div>
+
+    <div class='flex' id="test11" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test12" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test13" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test14" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test15" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test16" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test17" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test18" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test19" style="width: 100px; height: 100px; "></div>
+</div>
+
+<div class="col">
+    <div class='flex label'  style="width: 100px; height: 100px; ">
+        grad:
+    </div>
+
+    <div class='flex' id="test20" style="width: 100px; height: 100px; "></div>
+
+    <div class='flex' id="test21" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test22" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test23" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test24" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test25" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test26" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test27" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test28" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test29" style="width: 100px; height: 100px; "></div>
+</div>
+
 <script src="../dist/circular-progress.js"></script>
 
 <script type="text/javascript">
-    var cp;
     function init() {
-        cp = new circularProgress({
-            target: 'test',
-            animate: false,
-            style: {
-                background: {
-                    // backgroundImage: 'http://img.zcool.cn/community/01f09e577b85450000012e7e182cf0.jpg@1280w_1l_2o_100sh.jpg',
-                    alpha: 0.5,
-                    crossOrigin: true,
-                    backgroundColor: '#fff'
-                },
-                ring: {
-                    fill: '#ffffff',
-                    lineWidth:1
-                }
-            }
-        }).setValue(70);
+        for(var i = 0; i < 10; i++) {
+            create(i).setBaseStyle('default').setValue(10 * (i+1));
+            create('1' + i).setBaseStyle('blue-light').setValue(10 * (i+1));
+            create('2' + i).setBaseStyle('grad').setValue(10 * (i+1));
+        }
+
     }
 
+
+    function create(num) {
+
+            return new circularProgress({
+                target: 'test' + num,
+                animate: true,
+
+            });
+    }
 </script>
 </body>
 </html>

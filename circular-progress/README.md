@@ -22,6 +22,9 @@ chrome：支持html5-canvas的基本支持
     let cp = new circularProgress(***option***).setValue(10);
 ```  
 
+4 setBaseStyle(name, style)  
+说明：设置默认的style, 如果提供两个参数，会覆盖之前相同name的style
+
 3 attach(*jquery*)  
 说明：将该方法扩展到jquery实例上,在jquery实例为$, JQuery, jquery时不需要手动执行  
 ```
@@ -81,3 +84,14 @@ chrome：支持html5-canvas的基本支持
       }
       
 ```
+---
+### 默认样式
+* default  
+实例：  
+![](./resources/default.png '描述')  
+* blue-light  
+实例：
+![](./resources/blue-light.png '描述') 
+* grad  
+实例：
+![](./resources/grad.png '描述') 
