@@ -1,6 +1,6 @@
 <h1>圆形进度条</h1>  
   
-[点击返回](../README.md "点击返回")  
+[点击返回](https://github.com/yanyj1993/bauble "点击返回")  
 
 
 ###浏览器支持 
