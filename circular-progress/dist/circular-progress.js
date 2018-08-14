@@ -187,6 +187,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 alpha: 1,
                 lineWidth: 2
             },
+            endPoint: {
+                color: '#fff',
+                radius: '1' // 半径
+            },
 
             text: { // 文本的设置
                 font: '20px sans-serif',
@@ -225,7 +229,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 color: '#000',
                 alpha: 1.0,
                 grad: true,
-                gradColor: ["magenta", "blue", "red"]
+
+                gradColor: ['orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'red'] // Red, Orange, Yellow, Green, Blue, Indigo and Violet
             }
 
         }
@@ -374,8 +379,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         if (style.grad) {
             var grad = ctx.createLinearGradient(0, 0, width, 0);
+            var steep = 1.0 / style.gradColor.length;
             for (var i = 0; i < style.gradColor.length; i++) {
-                grad.addColorStop(i * 0.5, style.gradColor[i]);
+                grad.addColorStop(i * steep, style.gradColor[i]);
             }
             ctx.strokeStyle = grad;
             ctx.strokeText(text, width / 2 - textData.width / 2, height / 2 + 7);

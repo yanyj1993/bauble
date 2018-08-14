@@ -186,6 +186,10 @@
                 alpha: 1,
                 lineWidth: 2,
             },
+            endPoint: {
+                color: '#fff',
+                radius: '1' // 半径
+            },
 
             text: { // 文本的设置
                 font: '20px sans-serif',
@@ -224,7 +228,8 @@
                 color: '#000',
                 alpha: 1.0,
                 grad: true,
-                gradColor:["magenta","blue","red"]
+
+                gradColor:['orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'red'] // Red, Orange, Yellow, Green, Blue, Indigo and Violet
             }
 
         }
@@ -379,8 +384,9 @@
 
         if(style.grad) {
             let grad=ctx.createLinearGradient(0,0, width,0);
+            let steep = 1.0 / style.gradColor.length;
             for(let i = 0; i < style.gradColor.length; i++) {
-                grad.addColorStop(i * 0.5, style.gradColor[i]);
+                grad.addColorStop(i * steep, style.gradColor[i]);
             }
             ctx.strokeStyle = grad;
             ctx.strokeText(text, width / 2 - textData.width / 2, height / 2 + 7);

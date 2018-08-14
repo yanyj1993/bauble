@@ -19,6 +19,10 @@
         .label {
             padding: 40px 0 10px 0;
         }
+        .col > .flex {
+            width: 50px;
+            height: 50px;
+        }
 
     </style>
 </head>
@@ -26,57 +30,57 @@
 
 
 <div class="col">
-    <div class='flex label'  style="width: 100px; height: 100px; ">
+    <div class='flex label'  >
        default:
     </div>
 
-    <div class='flex' id="test0" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test0" ></div>
 
-    <div class='flex' id="test1" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test2" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test3" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test4" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test5" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test6" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test7" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test8" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test9" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test1" ></div>
+    <div class='flex' id="test2" ></div>
+    <div class='flex' id="test3" ></div>
+    <div class='flex' id="test4" ></div>
+    <div class='flex' id="test5" ></div>
+    <div class='flex' id="test6" ></div>
+    <div class='flex' id="test7" ></div>
+    <div class='flex' id="test8" ></div>
+    <div class='flex' id="test9" ></div>
 </div>
 
 <div class="col">
-    <div class='flex label'  style="width: 100px; height: 100px; ">
+    <div class='flex label'  >
         blue-light:
     </div>
 
-    <div class='flex' id="test10" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test10" ></div>
 
-    <div class='flex' id="test11" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test12" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test13" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test14" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test15" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test16" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test17" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test18" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test19" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test11" ></div>
+    <div class='flex' id="test12" ></div>
+    <div class='flex' id="test13" ></div>
+    <div class='flex' id="test14" ></div>
+    <div class='flex' id="test15" ></div>
+    <div class='flex' id="test16" ></div>
+    <div class='flex' id="test17" ></div>
+    <div class='flex' id="test18" ></div>
+    <div class='flex' id="test19" ></div>
 </div>
 
 <div class="col">
-    <div class='flex label'  style="width: 100px; height: 100px; ">
+    <div class='flex label'  >
         grad:
     </div>
 
-    <div class='flex' id="test20" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test20" ></div>
 
-    <div class='flex' id="test21" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test22" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test23" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test24" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test25" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test26" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test27" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test28" style="width: 100px; height: 100px; "></div>
-    <div class='flex' id="test29" style="width: 100px; height: 100px; "></div>
+    <div class='flex' id="test21" ></div>
+    <div class='flex' id="test22" ></div>
+    <div class='flex' id="test23" ></div>
+    <div class='flex' id="test24" ></div>
+    <div class='flex' id="test25" ></div>
+    <div class='flex' id="test26" ></div>
+    <div class='flex' id="test27" ></div>
+    <div class='flex' id="test28" ></div>
+    <div class='flex' id="test29" ></div>
 </div>
 
 <script src="../dist/circular-progress.js"></script>
@@ -97,6 +101,8 @@
             return new circularProgress({
                 target: 'test' + num,
                 animate: true,
+                width: 100,
+                height: 100
 
             });
     }
