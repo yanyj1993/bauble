@@ -14,7 +14,7 @@
 <div id="yanyj">
 
 </div>
-<script src="../dist/banner-arrows.min.js"></script>
+<script src="../dist/banner-arrows.js"></script>
 <script type="text/javascript">
     let ba = new BannerArrows({
         id: 'yanyj',
@@ -23,7 +23,7 @@
             width: 100,
             height:8,
             margin: 0.5,
-            labels: ((year) => {let years = [];  let count = 9; while(count >= 0) {years.push(year-count); count--;} return years;})(new Date().getFullYear())
+            labels: ['2018','2017','2016','2015','2014','2013','2012','2011','2010','2009']
         },
         events: {
             click: function () {

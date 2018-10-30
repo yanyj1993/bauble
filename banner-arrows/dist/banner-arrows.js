@@ -63,7 +63,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var element = document.getElementById(this.setting.id);
 
             this.canvas = element instanceof HTMLCanvasElement ? element : Util.appendCanvas2Target(element, Util.generatorUUId(), this.setting.width, this.setting.height);
-            this.canvas.style.cursor = 'pointer';
+            // this.canvas.style.cursor = 'pointer';
             this.canvasWidth = this.canvas.width;
             this.canvasHeight = this.canvas.height;
 
@@ -97,6 +97,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this.events.click && _this.events.click(_this.arrowsSetting.labels[selectIndex], selectIndex);
             });
+
             this.draw();
         }
 
@@ -124,6 +125,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 }
 
                 vertexes.arrowVertexes.forEach(function (vertex, index) {
+                    ctx.save();
                     ctx.beginPath();
                     ctx.moveTo(vertex[1][0], vertex[1][1]);
 
@@ -143,6 +145,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     }
 
                     ctx.fill();
+
+                    ctx.restore();
                 });
 
                 ctx.font = style.textFont;
@@ -152,6 +156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     return;
                 }
                 vertexes.textCenters.forEach(function (textCenter, index) {
+                    ctx.save();
                     ctx.beginPath();
 
                     var textData = ctx.measureText(text[index]);
@@ -159,6 +164,76 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     ctx.fillStyle = selectIndex === index ? style.arrowActiveStyle : Util.hexToRgba(style.textColor, style.textAlpha);
 
                     ctx.fillText(text[index], textCenter[0] - textData.width / 2, textCenter[1] * 2 + 4);
+
+                    ctx.restore();
+                });
+
+                return selectIndex;
+            }
+        }, {
+            key: 'scaleDraw',
+            value: function scaleDraw(position) {
+
+                var ctx = this.ctx,
+                    vertexes = this.vertexes,
+                    canvasWidth = this.canvasWidth,
+                    canvasHeight = this.canvasHeight,
+                    selectIndex = this.vertexes.activeIndex,
+                    style = this.styleSetting;
+
+                ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                ctx.save();
+                var inside = false;
+                var rect = vertexes.rect;
+                if (position) {
+                    ctx.beginPath();
+                    ctx.rect(rect[0], rect[1], rect[2], rect[3]);
+                    inside = ctx.isPointInPath(position.x, position.y);
+
+                    ctx.clearRect(rect[0], rect[1], rect[2], rect[3]);
+                }
+
+                ctx.restore();
+                vertexes.arrowVertexes.forEach(function (vertex, index) {
+
+                    ctx.beginPath();
+                    ctx.save();
+                    ctx.moveTo(vertex[1][0], vertex[1][1]);
+
+                    for (var i = 2; i < vertex.length; i++) {
+                        ctx.lineTo(vertex[i][0], vertex[i][1]);
+                    }
+                    ctx.closePath();
+                    ctx.fillStyle = vertex[0];
+                    if (position) {
+                        if (ctx.isPointInPath(position.x, position.y)) {
+                            ctx.scale(1.5, 1.5);
+                        }
+                        vertex[0] = ctx.fillStyle;
+                    }
+
+                    ctx.fill();
+
+                    ctx.restore();
+                });
+
+                ctx.font = style.textFont;
+                ctx.textAlign = "start";
+                var text = this.arrowsSetting.labels;
+                if (text.length !== vertexes.arrowVertexes.length) {
+                    return;
+                }
+                vertexes.textCenters.forEach(function (textCenter, index) {
+                    ctx.save();
+                    ctx.beginPath();
+
+                    var textData = ctx.measureText(text[index]);
+
+                    ctx.fillStyle = selectIndex === index ? style.arrowActiveStyle : Util.hexToRgba(style.textColor, style.textAlpha);
+
+                    ctx.fillText(text[index], textCenter[0] - textData.width / 2, textCenter[1] * 2 + 4);
+
+                    ctx.restore();
                 });
 
                 return selectIndex;
@@ -303,3 +378,5 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     return BannerArrows;
 });
+
+var promise = new Promise();
